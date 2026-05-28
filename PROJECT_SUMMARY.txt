@@ -1,0 +1,372 @@
+# XCKU5P 数据采集卡 — 工程架构文档
+更新: 2026-05-21  |  顶层: fpga_top_integrated.sv
+================================================================================
+
+
+一、硬件架构
+════════════════════════════════════════════════════════════════════════════════
+
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                       FPGA (XCKU5P)                                │
+  │                                                                    │
+  │  ADC 双通道        DDR4 1GB             100G CMAC       PCIe ×1   │
+  │  1.5GSPS/8bit      环形缓冲 512MB       RS-FEC          备份通路  │
+  │  LVDS 32-lane      333MHz / 32bit       4×25G GTY       Gen3      │
+  │      │                  │                   │              │       │
+  │  125MHz│            333MHz│             322MHz│        125MHz│      │
+  │      ▼                  ▼                   ▼              ▼       │
+  │  ┌──────────────────────────────────────────────────────────┐     │
+  │  │                  fpga_top_integrated                      │     │
+  │  │                                                          │     │
+  │  │  ADC → gearbox(32→96) → packer(512b×2) → CDC FIFO       │     │
+  │  │     → DDR4 S2MM (BTT=128) ─── DDR4 ─── MM2S (BTT=128)   │     │
+  │  │     → ddr4_readout_demux ┬→ CMAC TX (100G ETH 实时发送)  │     │
+  │  │                          └→ PCIe XDMA C2H (备份排空)    │     │
+  │  │                                                          │     │
+  │  │  CMAC RX → rx_demux → ARP/ICMP/UDP cmd parser (控制面)  │     │
+  │  └──────────────────────────────────────────────────────────┘     │
+  └────────────────────────────────────────────────────────────────────┘
+
+5 个独立时钟域 (通过 XPM CDC 安全交互):
+  clk_50m     50MHz    板载晶振 → clk_wiz → 100MHz init_clk (CMAC寄存器)
+  usr_mac_clk 322MHz   CMAC IP 输出          数据面主时钟
+  c0_ddr4_ui  333MHz   DDR4 MIG 输出         存储接口时钟
+  clk_adc_125 125MHz   adc_top 输出          packer + ADC CDC FIFO
+  pcie_clk_125 125MHz  XDMA IP 输出          PCIe C2H 通路
+
+
+二、数据流
+════════════════════════════════════════════════════════════════════════════════
+
+写通路: ADC → DDR4
+─────────────────
+  ADC LVDS (32 lane, 375MHz DDR, 1.5GSPS)
+    → IBUFDS → IDELAYE3 (idelay_auto_scan 自动扫描最优 tap)
+    → IDDRE1 (DDR→SDR, q1/q2 @375MHz)
+    → gearbox_32_to_96 (×2: I+Q, 3×32b→96b, XPM FIFO 375→125MHz)
+    → adc_packer_512 (5-pair 环形缓冲 → 2-beat 512b burst)
+         Beat0(tlast=0): [511:480] HDR{sync,seq,ts}  [479:0] I0,Q0,I1,Q1,I2
+         Beat1(tlast=1): [511:32] Q2,I3,Q3,I4,Q4      [31:0] TS
+    → ADC CDC FIFO (577b = {tlast,tkeep,tdata}, 125→322MHz, depth=512)
+    → ddr4_subsystem_top:
+         RX CDC FIFO (577b, 322→333MHz, depth=4096=256KB)
+         → BD S2MM DataMover (BTT=128) → SmartConnect → MIG → DDR4
+         wr_ptr_confirmed: 仅 s2mm_sts_tvalid 时推进 (杜绝读未落盘数据)
+
+读通路: DDR4 → CMAC / PCIe
+──────────────────────────
+  DDR4 → MIG → SmartConnect → BD MM2S DataMover (BTT=128)
+    → ddr4_subsystem_top:
+         TX Packet FIFO (xpm_fifo_axis, PACKET_FIFO=true, 333→322M, depth=1024)
+         收齐整包 (tlast=1) 才吐出 → 杜绝 CMAC TX Underflow
+    → ddr4_readout_demux (仅 play_active_sync[1]=1 时使能读出):
+         ├─ CMAC path: 512b 直通 → framer(加头) → arbiter → CMAC IP → GT TX
+         └─ PCIe path: CDC FIFO(322→125M) → 512→64 width converter → XDMA C2H
+
+控制面: CMAC RX
+────────────────
+  CMAC RX → rx_demux:
+    Ch0 (ARP)       → arp_responder  → arbiter S0 → CMAC TX
+    Ch1 (ICMP)      → icmp_responder → arbiter S1 → CMAC TX
+    Ch2 (UDP:8000)  → deframer → (Phase2 未连 DDR4)
+    Ch3 (UDP:8001)  → udp_cmd_parser → ctrl_start_rec/play/stop/soft_reset
+                                      → CDC 到 c0_ddr4_ui_clk 域
+                                      → stat响应包 ← CDC 回传
+
+
+三、源文件清单 (sources_1/new/)
+════════════════════════════════════════════════════════════════════════════════
+
+【顶层】
+  fpga_top_integrated.sv
+    当前顶层。例化所有子系统: CMAC/ADC/DDR4/PCIe, 管理 CDC、复位、UDP命令、
+    诊断信号汇聚。8 个功能 section。
+    参数: DDR4_BUF_BASE=0x1000_0000, DDR4_BUF_MB=512, BUF_END 按128B对齐。
+
+【CMAC 协议栈 — 7文件】
+  cmac_100g_wrapper.sv
+    封装 CMAC IP。RX→rx_demux→ARP/ICMP/UDP/framer/arbiter→TX。
+    含链路去抖 (连续32周期丢对齐才复位)、safe_mac_tx_tready (防MAC溢出/欠载)
+
+  cmac_axi_master.sv
+    AXI4-Lite 初始化状态机: RS-FEC使能→RX使能→TX使能→Pause流控。
+    167ms延时等GT复位。含超时计数器防止AXI slave无响应死锁
+
+  rx_demux.sv
+    全寄存器输出流水线 (322MHz时序优化)。解析ETH/IP/UDP头, 按协议分流到4通道。
+    支持VLAN
+
+  arp_responder.sv
+    ARP Request检测→Reply构造, 单512-beat完成
+
+  icmp_responder.sv
+    24-beat缓冲, 流水线校验和重算 (2级拆分进位长链)。支持VLAN, 最大1536B
+
+  udp_100g_deframer_pro.sv
+    剥离42B ETH/IP/UDP头。动态长度(UDP len字段), tkeep掩码防尾拍污染
+
+  udp_100g_framer_pro.sv
+    加42B头组装完整帧。动态payload长度(i_tx_payload_bytes), 2级流水线校验和,
+    leftover拼接, 最小60B填充
+
+  udp_cmd_parser.sv
+    监听UDP:8001, 解析命令→生成ctrl脉冲, 构造状态响应包(源端口回传)
+
+  axis_tx_arbiter.sv
+    固定优先级 ARP>ICMP>UDP>CMD, 包级仲裁, 0-Bubble Skid Buffer
+
+  udp_100g_config_slave.sv
+    AXI4-Lite配置寄存器(MAC/IP/Port/VLAN)
+
+  udp_100g_statistics.sv
+    脉冲→32-bit统计计数器
+
+【DDR4 子系统 — 3文件】
+  ddr4_subsystem_top.sv
+    封装 DDR4 BD。RX CDC FIFO (577b, 322→333M, depth=4096)。
+    TX Packet FIFO (xpm_fifo_axis PACKET_FIFO=true, 333→322M, depth=1024)。
+    CMD/STS pipeline 寄存器 (打断333MHz组合路径, skid buffer 实现)
+
+  ddr4_readout_demux.sv
+    @333MHz: MM2S 读命令生成 (环形跟随 wr_ptr_confirmed, BTT=128)
+    @322MHz: 数据分流到 CMAC(512b直通) 或 PCIe(CDC+512→64转换)
+    play_enable 门控 + soft_rst 复位 + mm2s_cmd_cnt 计数 + pcie_c2h_tkeep
+
+【ADC 前端 — 4文件】
+  adc_top.sv
+    32路 IBUFDS+IDELAYE3+IDDRE1+idelay_auto_scan。
+    时钟生成(clk_wiz_1: 375M/300M/125M), SPI配置, CAL脉冲
+
+  adc_packer_512.sv
+    5-pair环形缓冲→2-beat 512b burst (93.75%效率)。
+    HDR={sync=1, seq[14:0], ts[15:0]}
+
+  gearbox_32_to_96.sv
+    3×32b@375M → 1×96b@125M, XPM FIFO (96→96 CDC, RELATED_CLOCKS=1)。
+    规避 Vivado 2025.2 32→96 宽比 DRC 非法组合
+
+  idelay_auto_scan.sv
+    512 tap 全扫描, 统计误码率, 找最大窗口中心。
+
+
+四、仿真验证 (sim_1/new/)
+════════════════════════════════════════════════════════════════════════════════
+
+TB 文件:
+  tb_fpga_top_front.sv         ADC→packer 数据采集。Scoreboard: sync/seq/tlast
+  tb_fpga_top_back.sv          MM2S 命令生成 + CMAC/PCIe 分流。wr_ptr_shadow 模拟
+  tb_fpga_top_integrated.sv    全链路 Zero-Force 集成测试 (详见下方)
+
+tb_fpga_top_integrated.sv — 全链路集成测试
+──────────────────────────────────────────
+  策略: 真实 DDR4 SDRAM 模型 (MT40A512M16LY-075 ×2 via MIG PHY)
+        ADC/CMAC/XDMA 行为桩 (加速仿真)
+        Zero TB intervention — RTL FSM 自主驱动
+  时钟: 50M sys / 156.25M GT / 375M ADC / 100M PCIe / 333M DDR4 UI
+  超时: 30ms，DDR4 校准约 7.5ms
+
+  测试结果 (2026-05-21, XSIM, 0.32ms, 53/53 ALL PASSED):
+
+  Phase 1  Sanity + Auto-Start              7/7 ✅
+    ADC ready, DDR4 calib_done, PCIe link_up, LED valid
+    S2MM cmd 自启, S2MM status 收到, MM2S cmd 自启
+
+  Phase 2  Data Pattern CRC                 8/8 ✅
+    CMAC Beat0: sync=1, tlast on Beat1, tkeep all-ones
+    I0 数据模式: sample 重复 (lower=upper), I0[95:0] 正确
+    Q0 = ~I0 (96-bit bitwise invert) — ADC pattern 完整通过 DDR4→CMAC
+    Beat1 valid non-zero payload
+
+  Phase 3  Bandwidth + FIFO Backpressure    8/8 ✅
+    吞吐量 >50Mbps, S2MM/MM2S 持续读写
+    S2MM stall (force tready=0) → rx_cdc FIFO 非零
+    Stall 释放 → FIFO 排空, S2MM/MM2S 恢复, CMAC 数据继续
+
+  Phase 4  UDP CDC + play_enable Gating    11/11 ✅
+    START_REC  → rec_active_322 → sync[1] CDC  ✅
+    STOP_REC   → rec_active cleared           ✅
+    START_PLAY → play_active_322 → sync[1] CDC ✅
+    play=0     → MM2S 暂停 (cmd 不再增长)      ✅
+    play 释放  → CMAC 数据恢复流动              ✅
+    BASE_ADDR  强制更新                        ✅
+    SOFT_RESET → rec/play 清零, ADC 恢复         ✅
+
+  Phase 5  Reset Stress (3×soft + 1×hard)  15/15 ✅
+    3 轮连续 soft_reset: ADC/DDR4/S2MM/MM2S 全部自主恢复
+    1 轮 sys_rst: ADC/DDR4/PCIe 重校准, 每轮 ≤8000 cycles
+
+  Phase 6  CMAC ↔ PCIe Mode Rapid Toggle    4/4 ✅
+    3 次快速切换 (pcie_mode=1→0, repeat), DDR4/ADC 稳定
+    CMAC beats:  54 → 1284  (持续)
+    PCIe beats:   0 → 6618  (切换期间收数)
+
+
+  仿真已覆盖的项目:
+    ✅ DDR4 校准 (真实 DRAM 模型)
+    ✅ S2MM → MM2S 全链路 (命令/状态握手 + PHY 读写)
+    ✅ CMAC TX 帧格式 (sync/seq/tkeep/tlast)
+    ✅ ADC Pattern CRC (I/Q 96-bit 经 DDR4 不损坏)
+    ✅ rx_cdc FIFO 背压 (填满→排空→恢复)
+    ✅ UDP 命令 CDC (rec_active/play_active 跨 322→333MHz)
+    ✅ play_enable 门控 (play=0 暂停 MM2S, play=1 恢复)
+    ✅ 复位压力 (3×soft + 1×hard 全恢复)
+    ✅ CMAC/PCIe 模式切换 (3×toggle, 两路数据正常)
+    ✅ PCIe C2H 数据通路 (data/tkeep/tlast)
+
+  仿真无法覆盖 (需上板):
+    🔴 CMAC RS-FEC / GT 链路训练 (需真实 SerDes + 对端)
+    🔴 XDMA PCIe DMA 传输 (需 Root Complex + 驱动)
+    🔴 ADC SPI 配置时序 / CalRun (需真实 ADC 芯片)
+    🔴 DDR4 满缓冲回绕 (512MB, 仿真时间不可接受)
+    🔴 时序收敛 STA (无布线延迟)
+    🔴 长时间烤机 (温度/电压漂移)
+
+
+五、UDP 命令协议
+════════════════════════════════════════════════════════════════════════════════
+
+通信:
+  命令: PC → FPGA UDP:8001
+  响应: FPGA → PC, src=8001, dst=请求方源端口 (动态来源, 非固定8001)
+
+状态机:
+                     ┌──────────┐
+     ┌──────────────→│  IDLE    │←──────────────────┐
+     │  SOFT_RESET   │ rec=0    │   SOFT_RESET      │
+     │               │ play=0   │                    │
+     │               └────┬─────┘                    │
+     │    START_REC(0x01) │ START_PLAY(0x03)        │
+     │                    ▼                          │
+     │               ┌──────────┐                   │
+     │               │RECORDING │                   │
+     │               └────┬─────┘                   │
+     │    STOP_REC(0x02)  │ STOP_PLAY(0x04)         │
+     │                    ▼                          │
+     │               ┌──────────┐                   │
+     └───────────────│PLAYBACK  │───────────────────┘
+                     └──────────┘
+  GET_STATUS(0x05) 任意状态可查, 不改变状态
+
+
+六、关键设计决策
+════════════════════════════════════════════════════════════════════════════════
+
+1. BTT=128 (非64)
+   packer 2-beat burst (Beat0=HDR+前半, Beat1=数据+ts) 作为逻辑帧。
+   CDC FIFO 传递 577b={tlast,tkeep,tdata} 保留帧结构。
+   128B = 2×512b AXI beat = 1×MIG DDR4 burst (8×128-bit), 完美对齐。
+
+2. play_enable 门控 MM2S (纯ADC模式自适应)
+   ddr4_readout_demux 在 UDP START_PLAY 后设置 play_enable=1 允许读出。
+   纯 ADC 场景（无 UDP 命令）play_enable 恒 0，改为 buf_empty=0 时自动启动读。
+   仿真已验证 play=0 暂停 MM2S、play=1 恢复的完整门控行为。
+
+3. TX Packet FIFO PACKET_FIFO=true
+   DDR4 MM2S 有气泡 (唤醒/刷新), 收齐完整包才吐出, 杜绝 CMAC Underflow。
+
+4. 链路去抖
+   RS-FEC 重对齐瞬间丢 stat_rx_aligned。连续 ≥32 周期才确认链路真断。
+   1000 周期稳定对齐后才释放复位, 避免频繁复位 FIFO。
+
+5. wr_ptr_confirmed 保守策略
+   MM2S 读指针跟随 wr_ptr_confirmed (=S2MM status 确认后的地址),
+   绝不读"已发命令但尚未落 DDR4"的数据。
+
+6. ADC CDC FIFO 577b 宽
+   携带 tlast + tkeep, 保留 packer 2-beat burst 结构,
+   避免 PC 端收到两个独立 UDP 包需软件重组时间戳。
+
+7. Packet FIFO 位置
+   放在 BD MM2S 输出之后、ddr4_readout_demux 之前,
+   使 demux 收到的是连续的、无气泡的 128B 完整帧。
+
+8. S2MM 无 UDP 门控 (纯ADC场景)
+   S2MM 写命令生成不再依赖 rec_active_sync[1]。
+   纯 ADC 模式（无 UDP REC 命令）下，写指针独立推进，ADC 数据持续流入 DDR4。
+   UDP REC/STOP 命令仅控制 rec_active 标志，不影响 S2MM 硬件写通路。
+
+
+七、RTL 仿真调试修复记录 (2026-05-20 ~ 2026-05-21)
+════════════════════════════════════════════════════════════════════════════════
+
+通过 DDR4 真实模型仿真，发现并修复以下问题：
+
+  [Bug 1] ADC CDC FIFO 读口 FWFT 时序
+    文件: fpga_top_integrated.sv
+    问题: axis_rx_tvalid 接 adc_fifo_data_valid，FWFT 模式下 data_valid
+          与 empty 时序不对齐，导致发送到 DDR4 的数据错拍。
+    修复: axis_rx_tvalid = !adc_fifo_empty && !adc_fifo_rd_rst_busy
+
+  [Bug 2] dm_rst_n 释放死锁
+    文件: fpga_top_integrated.sv
+    问题: 计数器到 500 时 ddr4_ready 尚未为 1，else 分支持续赋值 0。
+    修复: else → else if (ddr4_ready)，仅在校准完成后释放复位。
+
+  [Bug 3] soft_rst_toggle_sync X 态传播
+    文件: fpga_top_integrated.sv
+    问题: CDC toggle 寄存器未在 !dm_rst_n 分支初始化，
+          soft_rst_active = X → if(x)永远为假 → S2MM FSM 永远不启动。
+    修复: 在 !dm_rst_n 复位分支补全 soft_rst_toggle_sync <= 2'd0 等初始化。
+
+  [Bug 4] MM2S 读启动死锁 (纯ADC模式)
+    文件: ddr4_readout_demux.sv
+    问题: 读 FSM 等待 play_enable=1，纯 ADC 场景无 UDP 命令 → 永不为 1。
+    修复: 增加 buf_empty=0 条件自动启动读，保留 play_enable 门控用于 UDP 模式。
+
+  [Bug 5] S2MM 写启动死锁 (纯ADC模式)
+    文件: fpga_top_integrated.sv
+    问题: 写 FSM 等待 rec_active_sync[1]=1，无 UDP 时永不为 1。
+    修复: 去掉 rec_active_sync 门控，S2MM 无条件自启动。
+
+  [Bug 6] always_ff 缺少 end
+    文件: fpga_top_integrated.sv
+    问题: soft_rst CDC 块 always_ff 缺少 end，编译报错。
+    修复: 补回缺失的 end。
+
+
+八、BD DataMover 配置
+═══════════════════════════════════════════════════════════════════════════════
+
+  m_axi_s2mm/mm2s_data_width    512      AXI 数据宽度 (64B/beat)
+  s2mm/mm2s_burst_size           64      每 AXI beat 64 字节
+  s2mm/mm2s_btt_used             23      BTT 位宽 (最大 8MB)
+  s2mm/mm2s_stscmd_fifo_depth     4      命令 FIFO in-flight 上限
+  s2mm_support_indet_btt      false      不支持不定长 BTT
+  s2mm/mm2s_include_dre        true      字节对齐重排引擎
+  enable_s2mm/mm2s_tkeep          1      TKEEP 使能
+
+DDR4: MT40A512M16LY-075 ×2, 1GB, 32-bit, CL=19, CWL=14, 1333MHz
+
+
+九、约束文件
+════════════════════════════════════════════════════════════════════════════════
+
+  integrated.xdc
+    5域时钟定义 + 异步组 + CDC false path + ADC Bank 66/67 LVDS +
+    DDR4 物理引脚 + PCIe GT LOC + LED + 位流配置。
+    层次路径: u_cmac, u_adc (对应 fpga_top_integrated)
+
+
+十、测试脚本 (scripts/)
+════════════════════════════════════════════════════════════════════════════════
+
+  pc_mellanox_100g_fec.ps1     Mellanox 100G RS-FEC 配置
+  fpga_test.ps1                UDP 命令基础测试
+  run_tb_front.tcl             tb_fpga_top_front 启动
+  run_tb_back.tcl              tb_fpga_top_back 启动
+  run_tb_fpga_top_integrated.tcl  集成 TB 启动
+  cmac_*.tcl                   CMAC 编程/验证/JTAG 状态读取
+
+
+十一、关键数值
+════════════════════════════════════════════════════════════════════════════════
+
+  ADC 采样率              1.5GSPS × 8bit × 2ch = 24Gbps
+  DDR4 带宽               333M × 32b × 2 ≈ 21.3Gbps
+  CMAC 线速               100Gbps (payload ~60Gbps)
+  DDR4 环形缓冲            512MB (0x1000_0000)
+  S2MM/MM2S BTT           128 字节/命令
+  Packer 效率             93.75%
+  RX CDC FIFO             4096 × 64B = 256KB (~770μs)
+  TX Packet FIFO          1024 × 64B = 64KB (~192μs)
+  ADC CDC FIFO            512 × 64B = 32KB

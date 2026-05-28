@@ -1,0 +1,33 @@
+# Vivado generated
+*.gen/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.jou
+*.log
+*.pb
+*.str
+*.wdf
+*.wdb
+*.vds
+xsim.dir/
+.Work/
+
+# Python
+.venv/
+__pycache__/
+
+# IDE
+.vscode/
+.claude/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Temp
+temp/
+_pdf_pages/
+*.backup.*
