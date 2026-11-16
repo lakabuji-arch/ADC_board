@@ -1,0 +1,22 @@
+verilog xil_defaultlib -i "../../../../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/gtwizard_ultrascale_v1_7_gtye4_channel.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/cmac_usplus_0_gt_gtye4_channel_wrapper.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/gtwizard_ultrascale_v1_7_gtye4_common.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/cmac_usplus_0_gt_gtye4_common_wrapper.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/cmac_usplus_0_gt_gtwizard_gtye4.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/cmac_usplus_0_gt_gtwizard_top.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/sim/cmac_usplus_0_gt.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_v3_1_24/cmac_usplus_0_wrapper.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_v3_1_24/cmac_usplus_0_ultrascale_tx_userclk.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_v3_1_24/cmac_usplus_0_ultrascale_rx_userclk.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0/example_design/cmac_usplus_0_axi4_lite_slave_2_ipif.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0/example_design/cmac_usplus_0_axi4_lite_reg_map.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0/example_design/cmac_usplus_0_axi4_lite_if_wrapper.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0/example_design/cmac_usplus_0_axis2lbus_segmented_top.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0/example_design/cmac_usplus_0_lbus2axis_segmented_top.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/cmac_usplus_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

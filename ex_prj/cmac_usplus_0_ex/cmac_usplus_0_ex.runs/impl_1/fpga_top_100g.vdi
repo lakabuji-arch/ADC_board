@@ -1,0 +1,1206 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Nov 16 14:31:37 2026
+# Process ID         : 24132
+# Current directory  : D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1
+# Command line       : vivado.exe -log fpga_top_100g.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source fpga_top_100g.tcl -notrace
+# Log file           : D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g.vdi
+# Journal file       : D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1\vivado.jou
+# Running On         : wangshihao
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : AMD Ryzen 7 H 255 w/ Radeon 780M
+# CPU Frequency      : 3793 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33565 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 38665 MB
+# Available Virtual  : 20763 MB
+#-----------------------------------------------------------
+source fpga_top_100g.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 534.188 ; gain = 218.988
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado_2025_2/2025.2/Vivado/data/ip'.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+Command: link_design -top fpga_top_100g -part xcku5p-ffvb676-2-i
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint 'd:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'u_clk_wiz'
+INFO: [Project 1-454] Reading design checkpoint 'd:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/ddr4_dma_subsystem_axi_datamover_0_0.dcp' for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/ddr4_dma_subsystem_ddr4_0_0.dcp' for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_proc_sys_reset_0_0/ddr4_dma_subsystem_proc_sys_reset_0_0.dcp' for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/proc_sys_reset_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/ddr4_dma_subsystem_smartconnect_0_0.dcp' for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0'
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1784.820 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3864 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. u_clk_wiz/inst/clkin1_ibuf 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'u_clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored for synthesis but preserved for implementation.
+INFO: [Chipscope 16-324] Core: u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0 UUID: 3f0b9ec2-1b74-5ee9-bab5-02f9d339ad5d 
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/bd_0/ip/ip_1/bd_141e_psr_aclk_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/bd_0/ip/ip_1/bd_141e_psr_aclk_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/smartconnect.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/smartconnect.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0'
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0/MicroBlaze_Core_I/Performance.Core/Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc:37]
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/bd_8936_microblaze_I_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/microblaze_I/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_1/bd_8936_rst_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/rst_0/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_1/bd_8936_rst_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/rst_0/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_2/bd_8936_ilmb_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/ilmb/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_2/bd_8936_ilmb_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/ilmb/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_3/bd_8936_dlmb_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/dlmb/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_3/bd_8936_dlmb_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/dlmb/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_10/bd_8936_iomodule_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/iomodule_0/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_10/bd_8936_iomodule_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst/iomodule_0/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/ip_0/ddr4_dma_subsystem_ddr4_0_0_microblaze_mcs_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/ip_0/ddr4_dma_subsystem_ddr4_0_0_microblaze_mcs_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/mcs0/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/par/ddr4_dma_subsystem_ddr4_0_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/par/ddr4_dma_subsystem_ddr4_0_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/ddr4_dma_subsystem_axi_datamover_0_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/ddr4_dma_subsystem_axi_datamover_0_0.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_proc_sys_reset_0_0/ddr4_dma_subsystem_proc_sys_reset_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_proc_sys_reset_0_0/ddr4_dma_subsystem_proc_sys_reset_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/proc_sys_reset_0/U0'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/synth/cmac_usplus_0_gt.xdc] for cell 'u_cmac_wrapper/DUT/inst/cmac_usplus_0_gt_i/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/ip_0/synth/cmac_usplus_0_gt.xdc] for cell 'u_cmac_wrapper/DUT/inst/cmac_usplus_0_gt_i/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0_board.xdc] for cell 'u_cmac_wrapper/DUT/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0_board.xdc] for cell 'u_cmac_wrapper/DUT/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc] for cell 'u_cmac_wrapper/DUT/inst'
+get_cells: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2375.410 ; gain = 0.000
+WARNING: [Vivado_Tcl 4-918] Waiver ID 'CDC-10' -from list has >10000 objects! [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc:77]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-11' -from list should not be empty. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc:82]
+WARNING: [Vivado_Tcl 4-918] Waiver ID 'CDC-11' -from list has >10000 objects! [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc:87]
+WARNING: [Vivado_Tcl 4-918] Waiver ID 'CDC-11' -from list has >10000 objects! [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc:92]
+get_pins: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2391.344 ; gain = 0.000
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/cmac_usplus_0/synth/cmac_usplus_0.xdc] for cell 'u_cmac_wrapper/DUT/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+INFO: [Timing 38-2] Deriving generated clocks [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+get_clocks: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2900.066 ; gain = 508.676
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc]
+WARNING: [Constraints 18-619] A clock with name 'gt_ref_clk_p' already exists, overwriting the previous clock with the same name. [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:5]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, the negative port (N-side) 'diff_clock_rtl_0_clk_n' of a differential pair cannot be placed on a positive package pin 'T25' (IOBM). [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:19]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, the positive port (P-side) 'gt_txp_out[0]' of a differential pair cannot be placed on a negative package pin 'R4' (IOBS). [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:29]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, the positive port (P-side) 'gt_txp_out[1]' of a differential pair cannot be placed on a negative package pin 'N4' (IOBS). [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:30]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, the positive port (P-side) 'gt_txp_out[2]' of a differential pair cannot be placed on a negative package pin 'L4' (IOBS). [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:31]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, the positive port (P-side) 'gt_txp_out[3]' of a differential pair cannot be placed on a negative package pin 'J4' (IOBS). [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:32]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site IOB_X0Y51 is not part of a diff pair [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc:145]
+Finished Parsing XDC File [D:/user/CMAC_DDR4/cmac_usplus_0_ex.srcs/constrs_1/new/cmac.xdc]
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/ddr4_dma_subsystem_ddr4_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/ddr4_dma_subsystem_ddr4_0_0_board.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst'
+Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/ddr4_dma_subsystem_axi_datamover_0_0_clocks.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0'
+Finished Parsing XDC File [d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/ddr4_dma_subsystem_axi_datamover_0_0_clocks.xdc] for cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0'
+INFO: [Project 1-1714] 97 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'fpga_top_100g'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/sw/calibration_0/Debug/calibration_ddr.elf 
+INFO: [Project 1-1687] 2 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2901.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 449 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 3 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 2 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  IOBUFDS => IOBUFDS (DIFFINBUF, IBUFCTRL, INV, OBUFT(x2)): 4 instances
+  IOBUFE3 => IOBUFE3 (IBUFCTRL, INBUF, OBUFT_DCIEN): 36 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 31 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUF(x2)): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 119 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 228 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 10 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 1 instance 
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 12 instances
+
+22 Infos, 45 Warnings, 6 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:05 . Memory (MB): peak = 2901.664 ; gain = 2255.836
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2901.664 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 2cd368876
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2902.664 ; gain = 1.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+
+Phase 1.1.1 Generate And Synthesize MIG Cores
+write_xdc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3367.809 ; gain = 0.000
+INFO: [IP_Flow 19-5647] Added synthesis output to IP cache for IP ddr4_dma_subsystem_ddr4_0_0_phy, cache-ID = 76e1bf58ba37f7c1
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 3401.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 3401.926 ; gain = 0.000
+get_pins: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3401.926 ; gain = 0.000
+get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3401.926 ; gain = 0.000
+read_xdc: Time (s): cpu = 00:01:01 ; elapsed = 00:00:57 . Memory (MB): peak = 3401.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 3401.926 ; gain = 0.000
+Phase 1.1.1 Generate And Synthesize MIG Cores | Checksum: 252980837
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:02:17 . Memory (MB): peak = 3401.926 ; gain = 34.117
+
+Phase 1.1.2 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 3433.617 ; gain = 0.000
+get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 3433.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 3433.617 ; gain = 0.000
+Phase 1.1.2 Generate And Synthesize Debug Cores | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:03:44 . Memory (MB): peak = 3433.617 ; gain = 65.809
+Phase 1.1 Core Generation And Design Setup | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:03:44 . Memory (MB): peak = 3433.617 ; gain = 65.809
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:03:44 . Memory (MB): peak = 3433.617 ; gain = 65.809
+Phase 1 Initialization | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:03:44 . Memory (MB): peak = 3433.617 ; gain = 65.809
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:03:44 . Memory (MB): peak = 3453.836 ; gain = 86.027
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:42 ; elapsed = 00:03:47 . Memory (MB): peak = 3453.836 ; gain = 86.027
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:42 ; elapsed = 00:03:47 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Phase 2 Timer Update And Timing Data Collection | Checksum: 29d8b476c
+
+Time (s): cpu = 00:01:43 ; elapsed = 00:03:47 . Memory (MB): peak = 3453.836 ; gain = 86.027
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 22 inverters resulting in an inversion of 181 pins
+INFO: [Opt 31-138] Pushed 101 inverter(s) to 3806 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 2ceaad9fe
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:03:49 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Retarget | Checksum: 2ceaad9fe
+INFO: [Opt 31-389] Phase Retarget created 122 cells and removed 313 cells
+INFO: [Opt 31-1021] In phase Retarget, 457 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 4 load pin(s).
+Phase 4 Constant propagation | Checksum: 23c0d5361
+
+Time (s): cpu = 00:01:46 ; elapsed = 00:03:51 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Constant propagation | Checksum: 23c0d5361
+INFO: [Opt 31-389] Phase Constant propagation created 221 cells and removed 1416 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 118 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.080 . Memory (MB): peak = 3453.836 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 3453.836 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2af396f5c
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:03:57 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Sweep | Checksum: 2af396f5c
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 30946 cells
+INFO: [Opt 31-1021] In phase Sweep, 2063 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 2d16d64bc
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:03:58 . Memory (MB): peak = 3453.836 ; gain = 86.027
+BUFG optimization | Checksum: 2d16d64bc
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 4 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2d16d64bc
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:03:58 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Shift Register Optimization | Checksum: 2d16d64bc
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 1 pins
+Phase 8 Post Processing Netlist | Checksum: 2fc922644
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:03:59 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Post Processing Netlist | Checksum: 2fc922644
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 1 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 198 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1c9264229
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:04:00 . Memory (MB): peak = 3453.836 ; gain = 86.027
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 3453.836 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1c9264229
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:04:00 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Phase 9 Finalization | Checksum: 1c9264229
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:04:00 . Memory (MB): peak = 3453.836 ; gain = 86.027
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             122  |             313  |                                            457  |
+|  Constant propagation         |             221  |            1416  |                                            118  |
+|  Sweep                        |               0  |           30946  |                                           2063  |
+|  BUFG optimization            |               0  |               4  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               1  |                                            198  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1c9264229
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:04:00 . Memory (MB): peak = 3453.836 ; gain = 86.027
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Power 33-23] Power model is not available for xiphy_riu_or
+INFO: [Power 33-23] Power model is not available for genVref.u_hpio_vref
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-295] The data input toggle rate 0.241214 of CMAC instance u_cmac_wrapper/DUT/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb is beyond the acceptable limit of 8.260000 - 54.090000. Using the 8.260000 toggle rate for power analysis.
+Resolution: Please use the following to set activity - set_switching_activity -static_probability <value> -toggle_rate <value> [get_pins -of_objects [get_cells <instance name>] -filter {DIRECTION =~ IN && NAME =~ *TX_DATAIN*}]
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 135 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 74 WE to EN ports
+Number of BRAM Ports augmented: 7 newly gated: 74 Total Ports: 270
+Ending PowerOpt Patch Enables Task | Checksum: 2713badcb
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 2713badcb
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:42 . Memory (MB): peak = 4823.672 ; gain = 1369.836
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 2cde55893
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 2cde55893
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+72 Infos, 89 Warnings, 6 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:03:41 ; elapsed = 00:05:05 . Memory (MB): peak = 4823.672 ; gain = 1922.008
+INFO: [Vivado 12-24828] Executing command : report_drc -file fpga_top_100g_drc_opted.rpt -pb fpga_top_100g_drc_opted.pb -rpx fpga_top_100g_drc_opted.rpx
+Command: report_drc -file fpga_top_100g_drc_opted.rpt -pb fpga_top_100g_drc_opted.pb -rpx fpga_top_100g_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 4823.672 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.143 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.203 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.343 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 28 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.056 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 235e8521f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.109 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1d28c26ac
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 20b9b3e1d
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 20b9b3e1d
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 20b9b3e1d
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 207f67592
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:14 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 1d7fc1814
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.3 PBP: Discrete Incremental
+Phase 2.1.1.3 PBP: Discrete Incremental | Checksum: 1b9655a80
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.4 PBP: Compute Congestion
+Phase 2.1.1.4 PBP: Compute Congestion | Checksum: 1b9655a80
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:27 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.5 PBP: Macro Placement
+Phase 2.1.1.5 PBP: Macro Placement | Checksum: 1f00bdbd1
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:28 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.6 PBP: UpdateTiming
+Phase 2.1.1.6 PBP: UpdateTiming | Checksum: 2140b193c
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.1.1.7 PBP: Add part constraints
+Phase 2.1.1.7 PBP: Add part constraints | Checksum: 2140b193c
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 2.1.1 Partition Driven Placement | Checksum: 2140b193c
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 2.1 Floorplanning | Checksum: 2140b193c
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 2140b193c
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:34 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 2c2748fc3
+
+Time (s): cpu = 00:02:21 ; elapsed = 00:01:35 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1dc3fa683
+
+Time (s): cpu = 00:10:16 ; elapsed = 00:06:10 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 19a9d1051
+
+Time (s): cpu = 00:10:24 ; elapsed = 00:06:15 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 195 LUTNM shape to break, 2192 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 159, two critical 36, total 195, new lutff created 1
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1087 nets or LUTs. Breaked 195 LUTs, combined 892 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 53 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr_axi/axi_w_channel_0/wready_reg_rep__1_n_0 and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_exit_pipeline/m00_exit/inst/w_reg/skid2vector_q_i_1__1/I2. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-661] Optimized 45 nets.  Re-placed 274 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 45 nets or cells. Created 7 new cells, deleted 15 existing cells and moved 274 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.544 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Physopt 32-1408] Pass 1. Identified 6 candidate nets for high-fanout optimization.
+INFO: [Physopt 32-81] Processed net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_DRE.I_S2MM_DRE_BLOCK/GEN_MUXFARM_512.sig_shift_case_reg[1]. Replicated 13 times.
+INFO: [Physopt 32-81] Processed net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_DRE.I_S2MM_DRE_BLOCK/GEN_MUXFARM_512.sig_shift_case_reg[0]. Replicated 19 times.
+INFO: [Physopt 32-81] Processed net u_cmac_wrapper/u_icmp/tx_cnt_reg_n_0_[2]. Replicated 8 times.
+INFO: [Physopt 32-81] Processed net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF/sig_s_ready_dup. Replicated 7 times.
+INFO: [Physopt 32-81] Processed net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/ENABLE_AXIS_SKID.I_MM2S_SKID_BUF/sig_s_ready_dup. Replicated 10 times.
+INFO: [Physopt 32-232] Optimized 5 nets. Created 57 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 5 nets or cells. Created 57 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.256 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-527] Pass 1: Identified 3 candidate cells for BRAM register optimization
+INFO: [Physopt 32-665] Processed cell u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_7. 72 registers were pushed out.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/FSM_sequential_state[1]_i_11__1_psbram_n and pin u_bd_wrapper/u_tx_cdc_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_16/DOUTBDOUT[31]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-666] Processed cell u_bd_wrapper/u_tx_cdc_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_16. No change.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/FSM_onehot_state[2]_i_3_psbram_n and pin u_bd_wrapper/u_tx_cdc_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_17/DOUTBDOUT[31]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-666] Processed cell u_bd_wrapper/u_tx_cdc_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_17. No change.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 72 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.177 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Physopt 32-68] No nets found for critical-cell optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Physopt 32-46] Identified 5 candidate nets for critical-cell optimization.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[39]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[2]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[39]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[1]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-571] Net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[39] was not replicated.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[41]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[5]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[41]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[6]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-571] Net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[41] was not replicated.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[34]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_UPPER[4].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_upper/xiphy_rxtx_bitslice/D[1]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[34]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[4].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_UPPER[4].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_upper/xiphy_rxtx_bitslice/D[2]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-571] Net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[34] was not replicated.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[59]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[5].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[2]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[59]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[5].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[5]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[59]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[5].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[1]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-782] Net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[59] was not replicated
+INFO: [Physopt 32-780] Instance u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy has DONT_TOUCH and is preventing optimization
+Resolution: Removing DONT_TOUCH attributes may enable additional optimization
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[63]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[7].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[2]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[63]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[7].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[5]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+WARNING: [Netlist 29-47] Cannot modify dont-touch cell 'u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy'.
+INFO: [Physopt 32-1483] Netlist edit fails for net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[63]_repN and pin u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/inst/generate_block1.u_ddr_xiphy/byte_num[7].xiphy_byte_wrapper.u_xiphy_byte_wrapper/I_BITSLICE_LOWER[2].GEN_RXTX_BITSLICE_EN.u_xiphy_bitslice_lower/xiphy_rxtx_bitslice/D[1]. Please check constraints such as DONT_TOUCH on the instance, net and hierarchical instance between driver and loads.
+INFO: [Physopt 32-782] Net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/mcal_ADR[63] was not replicated
+INFO: [Physopt 32-780] Instance u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy has DONT_TOUCH and is preventing optimization
+Resolution: Removing DONT_TOUCH attributes may enable additional optimization
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |          195  |            892  |                  1087  |           0  |           1  |  00:00:02  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            7  |             15  |                    45  |           0  |           1  |  00:00:12  |
+|  Very High Fanout                                 |           57  |              0  |                     5  |           0  |           1  |  00:00:02  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |           72  |              0  |                     1  |           0  |           1  |  00:00:02  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            0  |              0  |                     0  |           2  |           1  |  00:00:00  |
+|  Total                                            |          331  |            907  |                  1138  |           2  |          12  |  00:00:19  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 20b346008
+
+Time (s): cpu = 00:10:53 ; elapsed = 00:06:42 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 29cec4081
+
+Time (s): cpu = 00:11:14 ; elapsed = 00:06:54 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 29cec4081
+
+Time (s): cpu = 00:11:14 ; elapsed = 00:06:55 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 339fd8450
+
+Time (s): cpu = 00:11:40 ; elapsed = 00:07:09 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 260cbd800
+
+Time (s): cpu = 00:11:51 ; elapsed = 00:07:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 3441b883d
+
+Time (s): cpu = 00:12:53 ; elapsed = 00:07:54 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 34bd8c3f8
+
+Time (s): cpu = 00:13:40 ; elapsed = 00:08:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 3.3.2 Slice Area Swap | Checksum: 34bd8c3f8
+
+Time (s): cpu = 00:13:41 ; elapsed = 00:08:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 3.3 Small Shape DP | Checksum: 2193f9eef
+
+Time (s): cpu = 00:14:35 ; elapsed = 00:09:02 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 2714eef85
+
+Time (s): cpu = 00:14:41 ; elapsed = 00:09:08 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 25bac9f65
+
+Time (s): cpu = 00:14:42 ; elapsed = 00:09:09 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 2454d7849
+
+Time (s): cpu = 00:15:29 ; elapsed = 00:09:35 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 2454d7849
+
+Time (s): cpu = 00:15:29 ; elapsed = 00:09:35 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1c3862a47
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.095 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 17efb9423
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Place 46-34] Processed net u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_RESET/sig_cmd_stat_rst_int_reg_n, BUFG insertion was skipped due to possible timing degradation.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 1, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 24172f5ca
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1f6b0b37a
+
+Time (s): cpu = 00:16:35 ; elapsed = 00:10:16 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.345. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 282c73721
+
+Time (s): cpu = 00:19:10 ; elapsed = 00:12:48 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Time (s): cpu = 00:19:10 ; elapsed = 00:12:48 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 282c73721
+
+Time (s): cpu = 00:19:11 ; elapsed = 00:12:48 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 20b14ec8c
+
+Time (s): cpu = 00:19:34 ; elapsed = 00:13:03 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                4x4|                4x4|              16x16|
+|___________|___________________|___________________|___________________|
+|      South|                2x2|                4x4|                8x8|
+|___________|___________________|___________________|___________________|
+|       East|              16x16|                8x8|              16x16|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|              16x16|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 20b14ec8c
+
+Time (s): cpu = 00:19:35 ; elapsed = 00:13:03 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 20b14ec8c
+
+Time (s): cpu = 00:19:36 ; elapsed = 00:13:04 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Time (s): cpu = 00:19:36 ; elapsed = 00:13:04 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1ae428eea
+
+Time (s): cpu = 00:19:36 ; elapsed = 00:13:04 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Ending Placer Task | Checksum: 115466dcc
+
+Time (s): cpu = 00:19:37 ; elapsed = 00:13:05 . Memory (MB): peak = 4823.672 ; gain = 0.000
+157 Infos, 101 Warnings, 6 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:19:54 ; elapsed = 00:13:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_io -file fpga_top_100g_io_placed.rpt
+report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.264 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file fpga_top_100g_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.441 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file fpga_top_100g_utilization_placed.rpt -pb fpga_top_100g_utilization_placed.pb
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.314 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.170 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.122 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:19 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.345 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+168 Infos, 101 Warnings, 6 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:19 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.330 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.177 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:20 ; elapsed = 00:00:10 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: ba08d730 ConstDB: 0 ShapeSum: 1c48edd5 RouteDB: 3ef4a8c7
+Nodegraph reading from file.  Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.658 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Post Restoration Checksum: NetGraph: 3e6deb2d | NumContArr: be890dbe | Constraints: f355b26d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2b2f5a5f5
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:25 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2b2f5a5f5
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:25 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2b2f5a5f5
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:25 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 2e06bd3e5
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:31 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 3949fde71
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:42 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.409  | TNS=0.000  | WHS=-0.277 | THS=-106.323|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 31c57d7ef
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:10 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.409  | TNS=0.000  | WHS=-0.346 | THS=-120.735|
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 2f95a64a4
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:11 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 2.6 Soft Constraint Pins - Fast Budgeting
+Phase 2.6 Soft Constraint Pins - Fast Budgeting | Checksum: 2f95a64a4
+
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:12 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00350028 %
+  Global Horizontal Routing Utilization  = 0.00204248 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 98417
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 82837
+  Number of Partially Routed Nets     = 15580
+  Number of Node Overlaps             = 2
+
+Phase 2 Router Initialization | Checksum: 39a436a30
+
+Time (s): cpu = 00:02:07 ; elapsed = 00:01:14 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 39a436a30
+
+Time (s): cpu = 00:02:07 ; elapsed = 00:01:14 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 26176683c
+
+Time (s): cpu = 00:02:39 ; elapsed = 00:01:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 1bffff468
+
+Time (s): cpu = 00:02:41 ; elapsed = 00:01:33 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+INFO: [Route 35-449] Initial Estimated Congestion
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+|           |___________________|___________________|___________________|
+| Direction | Size   | % Tiles  | Size   | % Tiles  | Size   | % Tiles  |
+|___________|________|__________|________|__________|________|__________|
+|      NORTH|     8x8|      0.52|     4x4|      1.28|   16x16|      1.28|
+|___________|________|__________|________|__________|________|__________|
+|      SOUTH|     8x8|      0.78|     8x8|      1.25|   16x16|      1.46|
+|___________|________|__________|________|__________|________|__________|
+|       EAST|   32x32|      2.07|   16x16|      1.42|   32x32|      3.49|
+|___________|________|__________|________|__________|________|__________|
+|       WEST|     2x2|      0.11|     2x2|      0.28|     8x8|      0.91|
+|___________|________|__________|________|__________|________|__________|
+Congestion Report
+GLOBAL Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+EAST
+	INT_X35Y37->INT_X50Y68 (CLEM_X35Y37->CLEL_R_X50Y68)
+	INT_X32Y48->INT_X47Y63 (CLEM_X32Y48->CLEL_R_X47Y63)
+	INT_X32Y47->INT_X47Y62 (CLEM_X32Y47->CLEL_R_X47Y62)
+	INT_X32Y46->INT_X47Y61 (CLEM_X32Y46->CLEL_R_X47Y61)
+	INT_X32Y45->INT_X47Y60 (CLEM_X32Y45->CLEL_R_X47Y60)
+LONG Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+EAST
+	INT_X36Y42->INT_X51Y65 (CLEM_X36Y42->URAM_URAM_FT_X51Y60)
+	INT_X34Y47->INT_X49Y62 (CLEM_X34Y47->CLEL_R_X49Y62)
+	INT_X34Y46->INT_X49Y61 (CLEM_X34Y46->CLEL_R_X49Y61)
+	INT_X34Y45->INT_X49Y60 (CLEM_X34Y45->CLEL_R_X49Y60)
+	INT_X34Y44->INT_X49Y59 (CLEM_X34Y44->CLEL_R_X49Y59)
+SHORT Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X32Y112->INT_X39Y127 (CLEM_X32Y112->CLEL_R_X39Y127)
+	INT_X32Y88->INT_X39Y95 (CLEM_X32Y88->CLEL_R_X39Y95)
+	INT_X32Y119->INT_X39Y126 (CLEM_X32Y119->CLEL_R_X39Y126)
+	INT_X32Y118->INT_X39Y125 (CLEM_X32Y118->CLEL_R_X39Y125)
+	INT_X32Y117->INT_X39Y124 (CLEM_X32Y117->CLEL_R_X39Y124)
+SOUTH
+	INT_X36Y92->INT_X43Y111 (CLEM_X36Y92->DSP_X43Y110)
+	INT_X40Y100->INT_X43Y103 (CLEM_X40Y100->DSP_X43Y100)
+	INT_X36Y96->INT_X39Y99 (CLEM_X36Y96->CLEL_R_X39Y99)
+	INT_X40Y96->INT_X43Y99 (CLEM_X40Y96->DSP_X43Y95)
+	INT_X36Y92->INT_X39Y95 (CLEM_X36Y92->CLEL_R_X39Y95)
+EAST
+	INT_X34Y37->INT_X49Y68 (CLEM_X34Y37->CLEL_R_X49Y68)
+	INT_X32Y48->INT_X47Y63 (CLEM_X32Y48->CLEL_R_X47Y63)
+	INT_X32Y47->INT_X47Y62 (CLEM_X32Y47->CLEL_R_X47Y62)
+	INT_X32Y46->INT_X47Y61 (CLEM_X32Y46->CLEL_R_X47Y61)
+	INT_X32Y45->INT_X47Y60 (CLEM_X32Y45->CLEL_R_X47Y60)
+
+INFO: [Route 35-448] Estimated Global/Short routing congestion is level 5 (32x32). Congestion levels of 5 and greater can reduce routability and impact timing closure.
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 35238
+ Number of Nodes with overlaps = 5540
+ Number of Nodes with overlaps = 1233
+ Number of Nodes with overlaps = 366
+ Number of Nodes with overlaps = 112
+ Number of Nodes with overlaps = 37
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.140 | TNS=-0.662 | WHS=-0.062 | THS=-0.099 |
+
+Phase 5.1 Global Iteration 0 | Checksum: 180f2a37c
+
+Time (s): cpu = 00:07:13 ; elapsed = 00:04:13 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 1170
+ Number of Nodes with overlaps = 296
+ Number of Nodes with overlaps = 100
+ Number of Nodes with overlaps = 43
+ Number of Nodes with overlaps = 22
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.043  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 1a4d1e152
+
+Time (s): cpu = 00:08:13 ; elapsed = 00:04:53 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 1a4d1e152
+
+Time (s): cpu = 00:08:14 ; elapsed = 00:04:53 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.043  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.043  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Delay CleanUp | Checksum: 241eed395
+
+Time (s): cpu = 00:08:40 ; elapsed = 00:05:07 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 241eed395
+
+Time (s): cpu = 00:08:40 ; elapsed = 00:05:08 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 6 Delay and Skew Optimization | Checksum: 241eed395
+
+Time (s): cpu = 00:08:41 ; elapsed = 00:05:08 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.043  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 225f2e714
+
+Time (s): cpu = 00:08:57 ; elapsed = 00:05:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 225f2e714
+
+Time (s): cpu = 00:08:58 ; elapsed = 00:05:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 10.3984 %
+  Global Horizontal Routing Utilization  = 10.1789 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 225f2e714
+
+Time (s): cpu = 00:08:59 ; elapsed = 00:05:18 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 225f2e714
+
+Time (s): cpu = 00:09:00 ; elapsed = 00:05:18 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 10 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin u_cmac_wrapper/DUT/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[3].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00 to physical pin GTYE4_COMMON_X0Y1/COM0_REFCLKOUT1
+Phase 10 Depositing Routes | Checksum: 225f2e714
+
+Time (s): cpu = 00:09:09 ; elapsed = 00:05:26 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 11 Resolve XTalk
+Phase 11 Resolve XTalk | Checksum: 20f76deff
+
+Time (s): cpu = 00:09:10 ; elapsed = 00:05:26 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 12 Post Process Routing
+Phase 12 Post Process Routing | Checksum: 20f76deff
+
+Time (s): cpu = 00:09:11 ; elapsed = 00:05:27 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Phase 13 Post Router Timing
+
+Phase 13.1 Update Timing
+Phase 13.1 Update Timing | Checksum: 20f76deff
+
+Time (s): cpu = 00:09:26 ; elapsed = 00:05:35 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.043  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 13 Post Router Timing | Checksum: 20f76deff
+
+Time (s): cpu = 00:09:26 ; elapsed = 00:05:36 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Total Elapsed time in route_design: 335.455 secs
+
+Phase 14 Post-Route Event Processing
+Phase 14 Post-Route Event Processing | Checksum: c625c0c5
+
+Time (s): cpu = 00:09:28 ; elapsed = 00:05:36 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: c625c0c5
+
+Time (s): cpu = 00:09:29 ; elapsed = 00:05:37 . Memory (MB): peak = 4823.672 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+189 Infos, 101 Warnings, 6 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:09:35 ; elapsed = 00:05:41 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_drc -file fpga_top_100g_drc_routed.rpt -pb fpga_top_100g_drc_routed.pb -rpx fpga_top_100g_drc_routed.rpx
+Command: report_drc -file fpga_top_100g_drc_routed.rpt -pb fpga_top_100g_drc_routed.pb -rpx fpga_top_100g_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_methodology -file fpga_top_100g_methodology_drc_routed.rpt -pb fpga_top_100g_methodology_drc_routed.pb -rpx fpga_top_100g_methodology_drc_routed.rpx
+Command: report_methodology -file fpga_top_100g_methodology_drc_routed.rpt -pb fpga_top_100g_methodology_drc_routed.pb -rpx fpga_top_100g_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_drc: Time (s): cpu = 00:01:21 ; elapsed = 00:00:44 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file fpga_top_100g_timing_summary_routed.rpt -pb fpga_top_100g_timing_summary_routed.pb -rpx fpga_top_100g_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_timing_summary: Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file fpga_top_100g_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file fpga_top_100g_route_status.rpt -pb fpga_top_100g_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_power -file fpga_top_100g_power_routed.rpt -pb fpga_top_100g_power_summary_routed.pb -rpx fpga_top_100g_power_routed.rpx
+Command: report_power -file fpga_top_100g_power_routed.rpt -pb fpga_top_100g_power_summary_routed.pb -rpx fpga_top_100g_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-295] The data input toggle rate 0.240587 of CMAC instance u_cmac_wrapper/DUT/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb is beyond the acceptable limit of 8.260000 - 54.090000. Using the 8.260000 toggle rate for power analysis.
+Resolution: Please use the following to set activity - set_switching_activity -static_probability <value> -toggle_rate <value> [get_pins -of_objects [get_cells <instance name>] -filter {DIRECTION =~ IN && NAME =~ *TX_DATAIN*}]
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+206 Infos, 104 Warnings, 6 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:36 ; elapsed = 00:00:27 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file fpga_top_100g_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file fpga_top_100g_bus_skew_routed.rpt -pb fpga_top_100g_bus_skew_routed.pb -rpx fpga_top_100g_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+generate_parallel_reports: Time (s): cpu = 00:03:09 ; elapsed = 00:02:01 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.308 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.157 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 4823.672 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/user/CMAC_DDR4/cmac_usplus_0_ex.runs/impl_1/fpga_top_100g_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 4823.672 ; gain = 0.000
+INFO: [Memdata 28-167] Found XPM memory block u_tx_meta_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_tx_meta_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_rx_meta_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_rx_meta_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_dm_ctrl/u_pending_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_dm_ctrl/u_pending_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_dm_ctrl/u_lb_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_dm_ctrl/u_lb_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s01_nodes/s01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[0].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[0].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[3].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[3].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[2].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[1].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_TSTRB_FIFO/USE_SYNC_FIFO.I_SYNC_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_TSTRB_FIFO/USE_SYNC_FIFO.I_SYNC_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+Command: write_bitstream -force fpga_top_100g.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+CRITICAL WARNING: [Vivado 12-1790] Evaluation License Warning: This design contains one or more IP cores that use separately licensed features. If the design has been configured to make use of evaluation features, please note that these features will cease to function after a certain period of time. Please consult the core datasheet to determine whether the core which you have configured will be affected. Evaluation features should NOT be used in production systems.
+
+Evaluation cores found in this design:
+    IP core 'cmac_usplus_0' (cmac_usplus_core) was generated with multiple features:
+        IP feature 'cmac_an_lt@2020.05' was enabled using a design_linking license.
+        IP feature 'cmac_usplus@2020.05' was enabled using a bought license.
+
+Resolution: If a new IP Core license was added, in order for the new license to be picked up, the current netlist needs to be updated by resetting and re-generating the IP output products before bitstream generation.
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Generating merged BMM file for the design top 'fpga_top_100g'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: d:/user/CMAC_DDR4/cmac_usplus_0_ex.gen/sources_1/bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/sw/calibration_0/Debug/calibration_ddr.elf 
+Integrating Hard IP ELF/MEM with the PDI.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./fpga_top_100g.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+249 Infos, 104 Warnings, 7 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:01:38 ; elapsed = 00:01:00 . Memory (MB): peak = 5051.824 ; gain = 228.152
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 16 15:02:11 2026...

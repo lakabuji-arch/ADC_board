@@ -68,7 +68,7 @@
         "C_M_AXI_S2MM_DATA_WIDTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXIS_S2MM_TDATA_WIDTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_INCLUDE_S2MM_STSFIFO": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_S2MM_STSCMD_FIFO_DEPTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],,
+        "C_S2MM_STSCMD_FIFO_DEPTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S2MM_STSCMD_IS_ASYNC": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_INCLUDE_S2MM_DRE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S2MM_BURST_SIZE": [ { "value": "64", "resolve_type": "generated", "format": "long", "usage": "all" } ],

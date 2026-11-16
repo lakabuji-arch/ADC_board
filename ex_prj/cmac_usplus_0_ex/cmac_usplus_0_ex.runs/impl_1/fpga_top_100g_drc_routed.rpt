@@ -1,0 +1,345 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Nov 16 14:59:16 2026
+| Host         : wangshihao running 64-bit major release  (build 9200)
+| Command      : report_drc -file fpga_top_100g_drc_routed.rpt -pb fpga_top_100g_drc_routed.pb -rpx fpga_top_100g_drc_routed.rpx
+| Design       : fpga_top_100g
+| Device       : xcku5p-ffvb676-2-i
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 58
++-----------+----------+--------------------------------------+--------+
+| Rule      | Severity | Description                          | Checks |
++-----------+----------+--------------------------------------+--------+
+| DCIRST-1  | Warning  | DCIRESET is required for design      | 28     |
+| PDCN-1569 | Warning  | LUT equation term check              | 3      |
+| REQP-1934 | Warning  | RAMB18E2_nochange_collision_advisory | 3      |
+| REQP-1935 | Warning  | RAMB36E2_nochange_collision_advisory | 23     |
+| RTSTAT-10 | Warning  | No routable loads                    | 1      |
++-----------+----------+--------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DCIRST-1#1 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_act_n is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#2 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#3 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[10] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#4 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[11] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#5 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[12] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#6 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[13] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#7 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[14] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#8 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[15] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#9 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[16] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#10 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[1] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#11 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[2] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#12 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[3] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#13 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[4] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#14 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[5] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#15 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[6] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#16 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[7] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#17 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[8] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#18 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_adr[9] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#19 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_ba[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#20 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_ba[1] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#21 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_bg[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#22 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_ck_c[0] is using DCI IO standard DIFF_SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#23 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_ck_t[0] is using DCI IO standard DIFF_SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#24 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_cke[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#25 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_cs_n[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#26 Warning
+DCIRESET is required for design  
+IO port ddr4_rtl_0_odt[0] is using DCI IO standard SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#27 Warning
+DCIRESET is required for design  
+IO port diff_clock_rtl_0_clk_n is using DCI IO standard DIFF_SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+DCIRST-1#28 Warning
+DCIRESET is required for design  
+IO port diff_clock_rtl_0_clk_p is using DCI IO standard DIFF_SSTL12_DCI but no DCIRESET primitive is used in the design. Please add a DCIRESET in the design to ensure the proper functionality of this IO. For more information, please consult AR#000038677.
+Related violations: <none>
+
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A1' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A2*A4)+(A2*(~A4)*(~A5))+((~A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A2*A4)+(A2*(~A4)*(~A5))+((~A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A5' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A3))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+REQP-1934#1 Warning
+RAMB18E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_8) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1934#2 Warning
+RAMB18E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_7) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1934#3 Warning
+RAMB18E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_8) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#1 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#2 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#3 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_2) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#4 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_3) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#5 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_4) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#6 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_5) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#7 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_6) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#8 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_7) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#9 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#10 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#11 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_2) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#12 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_3) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#13 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_4) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#14 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_5) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#15 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/axi_datamover_0/U0/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_GP_SF.I_S2MM_GP_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_6) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#16 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#17 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_1) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#18 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_2) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#19 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_3) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#20 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_4) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#21 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_5) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#22 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_6) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1935#23 Warning
+RAMB36E2_nochange_collision_advisory  
+Synchronous clocking is detected for BRAM (u_cmac_wrapper/u_udp_rx_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_7) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+334 net(s) have no routable loads. The problem bus(es) and/or net(s) are u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/LMB_CE_riu,
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_riu/LMB_UE_riu,
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/u_ddr_cal/u_xsdb_arbiter/Q[12],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/u_ddr_cal/u_xsdb_arbiter/Q[13],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/u_ddr_cal/u_xsdb_arbiter/Q[14],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_ddr_cal_top/u_ddr_cal/u_xsdb_arbiter/Q[15],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_fixdly_rdy_low/SYNC[0].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_fixdly_rdy_low/SYNC[1].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_fixdly_rdy_upp/SYNC[0].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_fixdly_rdy_upp/SYNC[1].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_phy_rdy_low/SYNC[0].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_phy_rdy_low/SYNC[1].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr4_mem_intfc/u_phy2clb_phy_rdy_upp/SYNC[0].sync_reg[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/ddr4_0/inst/u_ddr_axi/axi_r_channel_0/Q[1],
+u_bd_wrapper/u_bd/ddr4_dma_subsystem_i/smartconnect_0/inst/m00_exit_pipeline/m00_exit/inst/w_reg/Q[0]
+ (the first 15 of 255 listed nets/buses).
+Related violations: <none>
+
+

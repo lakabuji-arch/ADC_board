@@ -1,0 +1,1 @@
+vopt -l elaborate.log +acc=npr -suppress 10016  -L xil_defaultlib -L xilinx_vip -L xpm -L gtwizard_ultrascale_v1_7_22 -L cmac_usplus_v3_1_24 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.cmac_usplus_0 xil_defaultlib.glbl -o cmac_usplus_0_opt

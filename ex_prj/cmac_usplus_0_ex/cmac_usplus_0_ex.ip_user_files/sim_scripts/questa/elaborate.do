@@ -1,0 +1,1 @@
+vopt -l elaborate.log +acc=npr -suppress 10016  -L xil_defaultlib -L xilinx_vip -L xpm -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.tb_system_loopback xil_defaultlib.glbl -o tb_system_loopback_opt

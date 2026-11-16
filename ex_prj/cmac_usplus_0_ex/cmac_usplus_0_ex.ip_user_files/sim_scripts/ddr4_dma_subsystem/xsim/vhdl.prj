@@ -1,0 +1,16 @@
+vhdl xil_defaultlib  \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_141e_psr_aclk_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_0/sim/bd_8936_microblaze_I_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_1/sim/bd_8936_rst_0_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_2/sim/bd_8936_ilmb_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_3/sim/bd_8936_dlmb_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_4/sim/bd_8936_dlmb_cntlr_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_5/sim/bd_8936_ilmb_cntlr_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_7/sim/bd_8936_second_dlmb_cntlr_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_8/sim/bd_8936_second_ilmb_cntlr_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_ddr4_0_0/bd_0/ip/ip_10/sim/bd_8936_iomodule_0_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_axi_datamover_0_0/sim/ddr4_dma_subsystem_axi_datamover_0_0.vhd" \
+"../../../bd/ddr4_dma_subsystem/ip/ddr4_dma_subsystem_proc_sys_reset_0_0/sim/ddr4_dma_subsystem_proc_sys_reset_0_0.vhd" \
+
+# Do not sort compile order
+nosort

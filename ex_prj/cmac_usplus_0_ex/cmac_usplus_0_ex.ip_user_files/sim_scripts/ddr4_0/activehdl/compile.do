@@ -1,0 +1,194 @@
+transcript off
+onbreak {quit -force}
+onerror {quit -force}
+transcript on
+
+vlib work
+vlib activehdl/xilinx_vip
+vlib activehdl/xpm
+vlib activehdl/microblaze_v11_0_16
+vlib activehdl/xil_defaultlib
+vlib activehdl/proc_sys_reset_v5_0_17
+vlib activehdl/lmb_v10_v3_0_16
+vlib activehdl/lmb_bram_if_cntlr_v4_0_27
+vlib activehdl/blk_mem_gen_v8_4_12
+vlib activehdl/iomodule_v3_1_13
+
+vmap xilinx_vip activehdl/xilinx_vip
+vmap xpm activehdl/xpm
+vmap microblaze_v11_0_16 activehdl/microblaze_v11_0_16
+vmap xil_defaultlib activehdl/xil_defaultlib
+vmap proc_sys_reset_v5_0_17 activehdl/proc_sys_reset_v5_0_17
+vmap lmb_v10_v3_0_16 activehdl/lmb_v10_v3_0_16
+vmap lmb_bram_if_cntlr_v4_0_27 activehdl/lmb_bram_if_cntlr_v4_0_27
+vmap blk_mem_gen_v8_4_12 activehdl/blk_mem_gen_v8_4_12
+vmap iomodule_v3_1_13 activehdl/iomodule_v3_1_13
+
+vlog -work xilinx_vip  -sv2k12  +define+SIM_SPEED_UP= "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/axi_vip_if.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/clk_vip_if.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xpm  -sv2k12  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"D:/Vivado_2025_2/2025.2/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+"D:/Vivado_2025_2/2025.2/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -93  \
+"D:/Vivado_2025_2/2025.2/Vivado/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vcom -work microblaze_v11_0_16 -93  \
+"../../../ipstatic/hdl/microblaze_v11_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_0/sim/bd_9054_microblaze_I_0.vhd" \
+
+vcom -work proc_sys_reset_v5_0_17 -93  \
+"../../../ipstatic/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_1/sim/bd_9054_rst_0_0.vhd" \
+
+vcom -work lmb_v10_v3_0_16 -93  \
+"../../../ipstatic/hdl/lmb_v10_v3_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_2/sim/bd_9054_ilmb_0.vhd" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_3/sim/bd_9054_dlmb_0.vhd" \
+
+vcom -work lmb_bram_if_cntlr_v4_0_27 -93  \
+"../../../ipstatic/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_4/sim/bd_9054_dlmb_cntlr_0.vhd" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_5/sim/bd_9054_ilmb_cntlr_0.vhd" \
+
+vlog -work blk_mem_gen_v8_4_12  -v2k5  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
+
+vlog -work xil_defaultlib  -v2k5  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_6/sim/bd_9054_lmb_bram_I_0.v" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_7/sim/bd_9054_second_dlmb_cntlr_0.vhd" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_8/sim/bd_9054_second_ilmb_cntlr_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_9/sim/bd_9054_second_lmb_bram_I_0.v" \
+
+vcom -work iomodule_v3_1_13 -93  \
+"../../../ipstatic/hdl/iomodule_v3_1_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93  \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/ip/ip_10/sim/bd_9054_iomodule_0_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/bd_0/sim/bd_9054.v" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_0/sim/ddr4_0_microblaze_mcs.v" \
+
+vlog -work xil_defaultlib  -sv2k12  +define+SIM_SPEED_UP= "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top" "+incdir+../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal" "+incdir+../../../../../../Vivado_2025_2/2025.2/Vivado/data/rsb/busdef" "+incdir+D:/Vivado_2025_2/2025.2/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l proc_sys_reset_v5_0_17 -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l iomodule_v3_1_13 \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/phy/ddr4_0_phy_ddr4.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/phy/ddr4_phy_v2_2_xiphy_behav.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/phy/ddr4_phy_v2_2_xiphy.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/iob/ddr4_phy_v2_2_iob_byte.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/iob/ddr4_phy_v2_2_iob.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/clocking/ddr4_phy_v2_2_pll.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_tristate_wrapper.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_riuor_wrapper.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_control_wrapper.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_byte_wrapper.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_bitslice_wrapper.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/ip_top/ddr4_0_phy.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_wtr.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ref.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_rd_wr.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_periodic.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_group.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc_merge_enc.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc_gen.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc_fi_xor.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc_dec_fix.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc_buf.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ecc.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_ctl.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_cmd_mux_c.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_cmd_mux_ap.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_arb_p.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_arb_mux_p.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_arb_c.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_arb_a.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_act_timer.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc_act_rank.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/controller/ddr4_v2_2_mc.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ui/ddr4_v2_2_ui_wr_data.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ui/ddr4_v2_2_ui_rd_data.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ui/ddr4_v2_2_ui_cmd.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ui/ddr4_v2_2_ui.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_ar_channel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_aw_channel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_b_channel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_cmd_arbiter.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_cmd_fsm.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_cmd_translator.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_fifo.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_incr_cmd.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_r_channel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_w_channel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_wr_cmd_fsm.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_wrap_cmd.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_a_upsizer.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_register_slice.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axi_upsizer.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_axic_register_slice.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_carry_and.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_carry_latch_and.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_carry_latch_or.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_carry_or.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_command_fifo.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_comparator.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_comparator_sel.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_comparator_sel_static.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_r_upsizer.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi/ddr4_v2_2_w_upsizer.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_addr_decode.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_read.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_reg_bank.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_reg.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_top.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_write.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/clocking/ddr4_v2_2_infrastructure.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_xsdb_bram.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_write.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_wr_byte.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_wr_bit.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_sync.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_read.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_rd_en.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_pi.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_mc_odt.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_debug_microblaze.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_cplx_data.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_cplx.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_config_rom.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_addr_decode.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_top.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal_xsdb_arbiter.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_cal.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_chipscope_xsdb_slave.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_v2_2_dp_AB9.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top/ddr4_0_ddr4.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top/ddr4_0_ddr4_mem_intfc.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal/ddr4_0_ddr4_cal_riu.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top/ddr4_0.sv" \
+"../../../../cmac_usplus_0_ex.gen/sources_1/ip/ddr4_0/tb/ddr4_0_microblaze_mcs_0.sv" \
+
+vlog -work xil_defaultlib \
+"glbl.v"
+
